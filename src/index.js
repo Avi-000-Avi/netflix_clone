@@ -8,7 +8,8 @@ render(<>
     <GlobalStyles/>
     <App />
     </>,
-    document.getElementById('root'));
+    document.getElementById('root')
+);
 
 
 
