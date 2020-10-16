@@ -1,11 +1,32 @@
-import React, {useState,useContext} from 'react';
+import React, {useState,useContext, useEffect} from 'react';
 import { SelectProfileContainer } from './profiles';
 import {FirebaseContext} from '../context/firebase';
+import { Loading } from '../components';
+import Fuse from 'fuse.js';
+import * as ROUTES from '../constants/routes';
+import logo from '../logo.svg';
+import { FooterContainer } from './footer';
+
 
 export function BrowseContainer({ slides }) {
     const [profile, setProfile] = useState({});
+    const [loading,setLoading] = useState(true);
     const {firebase} = useContext(FirebaseContext);
     const user = firebase.auth().currentUser || {};
 
-    return <SelectProfileContainer user ={user} setProfile = {setProfile}/>;
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    },[profile.displayName]);
+
+    return profile.displayName ? (
+        loading ? (
+        <Loading  src = {user.photoURL}/> 
+        ):(
+        <Loading.ReleaseBody/>
+        )
+        ) : (
+        <SelectProfileContainer user ={user} setProfile = {setProfile}/>
+    );
 }
