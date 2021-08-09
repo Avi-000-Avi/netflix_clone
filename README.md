@@ -7,6 +7,6 @@ I used compound components (just a design pattern) to build my components, and t
 
 ![alt text](<https://github.com/Avi-000-Avi/netflix_clone/blob/master/Browse.png>)
 
-![alt text](<https://github.com/Avi-000-Avi/netflix_clone/blob/master/Profile.png>)
+![alt text](<https://github.com/Avi-000-Avi/netflix_clone/blob/master/profile.png>)
 
 ![alt text](<https://github.com/Avi-000-Avi/netflix_clone/blob/master/home.png>)
